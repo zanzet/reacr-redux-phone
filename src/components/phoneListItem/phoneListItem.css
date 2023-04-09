@@ -1,0 +1,19 @@
+.wrape_name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.name{
+    text-align: start;
+    font-size: 26px;
+}
+.number{
+    font-size: 20px;
+}
+.email{
+    font-size: 17px;
+}
+button{
+    font-size: 15px;
+    border-radius: 30px;
+}
