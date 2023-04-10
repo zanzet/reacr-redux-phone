@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import phone from '../components/phoneList/phoneSlise'
+import phone from '../components/phoneList/phoneSlise';
+import filter from '../components/serchInput/filterSlise'
 
 const stringMiddleware = () => (dispatch) => (action) =>{
     if (typeof action == 'string') {
@@ -11,7 +12,7 @@ const stringMiddleware = () => (dispatch) => (action) =>{
 }
 
 const store = configureStore({
-    reducer: { phone },
+    reducer: { phone, filter },
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleware),
     devTools: process.env.NODE_ENV !== 'production'
 }) 

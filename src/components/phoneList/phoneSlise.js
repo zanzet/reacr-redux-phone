@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, createSelector} from "@reduxjs/toolkit";
 import { useHttp } from "../../hook/http.hook";
 
 const initialState = {
@@ -36,6 +36,19 @@ const phoneSlice = createSlice({
             })
     }
 })
+
+export const filteredHeroesSelector = createSelector(
+    (state) => state.filter,
+    (state)=>state.phone.phone,
+    (filter, phone) => {
+        if (filter === '') {
+            console.log(phone)
+            return phone;
+        } else {
+           return phone.filter(item => item.name.toLowerCase().includes(filter?.toLowerCase()))
+        }
+    }
+);
 
 const { actions, reducer } = phoneSlice;
 

@@ -5,13 +5,13 @@ import { CSSTransition, TransitionGroup} from 'react-transition-group';
 import PhoneListItem from "../phoneListItem/PhoneListItem"
 import Spinner from '../spinner/Spinner'
 
-import { fetchPhone, phoneDelete } from './phoneSlise'
+import { fetchPhone, phoneDelete, filteredHeroesSelector } from './phoneSlise'
 import useHttp from '../../hook/http.hook'
 
 
 const PhoneList = () =>{
 
-    const phone = useSelector(state=>state.phone.phone)
+    const phone = useSelector(filteredHeroesSelector)
     const phoneLoadingStatus = useSelector(state=> state.phone.phoneLoadingStatus)
     const dispatch = useDispatch();
     const { controller } = useHttp();
