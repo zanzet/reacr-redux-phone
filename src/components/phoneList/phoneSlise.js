@@ -41,8 +41,10 @@ export const filteredHeroesSelector = createSelector(
     (state) => state.filter,
     (state)=>state.phone.phone,
     (filter, phone) => {
+        if(typeof +filter == 'number' && +filter !== NaN){
+            return phone.filter(item => item.phone.toString().includes(filter))
+        }
         if (filter === '') {
-            console.log(phone)
             return phone;
         } else {
            return phone.filter(item => item.name.toLowerCase().includes(filter?.toLowerCase()))
