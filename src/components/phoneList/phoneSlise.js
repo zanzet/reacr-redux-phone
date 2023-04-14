@@ -20,7 +20,10 @@ const phoneSlice = createSlice({
     reducers: {
         phoneDelete: (state, action) => {
             state.phone = state.phone.filter(item => item.id !== action.payload)
-        }
+        },
+        phoneCreate: (state, action) =>{
+            state.phone.push(action.payload)
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -41,12 +44,12 @@ export const filteredHeroesSelector = createSelector(
     (state) => state.filter,
     (state)=>state.phone.phone,
     (filter, phone) => {
-        if(typeof +filter == 'number' && +filter !== NaN){
-            return phone.filter(item => item.phone.toString().includes(filter))
+        if(filter  && !isNaN(+filter)){
+            return phone.filter(item => item.phone.includes(filter))
         }
         if (filter === '') {
             return phone;
-        } else {
+        } else { 
            return phone.filter(item => item.name.toLowerCase().includes(filter?.toLowerCase()))
         }
     }
@@ -56,4 +59,4 @@ const { actions, reducer } = phoneSlice;
 
 export default reducer;
 
-export const { phoneDelete } = actions;
+export const { phoneDelete, phoneCreate } = actions;

@@ -38,7 +38,7 @@ const PhoneList = () =>{
         if (arr.length === 0) {
             return (
                 <CSSTransition
-                    timeout={0}
+                    timeout={500}
                     classNames="hero">
                     <h5 className="text-center mt-5">Контактов пока нет</h5>
                 </CSSTransition>
