@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/reacr-redux-phone/static/css/main.fcd9577e.css",
+    "main.js": "/reacr-redux-phone/static/js/main.18d7923a.js",
+    "static/js/787.122072f7.chunk.js": "/reacr-redux-phone/static/js/787.122072f7.chunk.js",
+    "index.html": "/reacr-redux-phone/index.html",
+    "main.fcd9577e.css.map": "/reacr-redux-phone/static/css/main.fcd9577e.css.map",
+    "main.18d7923a.js.map": "/reacr-redux-phone/static/js/main.18d7923a.js.map",
+    "787.122072f7.chunk.js.map": "/reacr-redux-phone/static/js/787.122072f7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fcd9577e.css",
+    "static/js/main.18d7923a.js"
+  ]
+}
